@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Animation</title>
+  <link rel="stylesheet" href="./style/sprout.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+</head>
+<body>
+<div class="container">
+  <div id="sky"></div>
+  <div id="earth"></div>
+  <div id="start">
+    <p onclick="btnFunc()">Start</p>
+  </div>
+  <div id="seed">
+    <div id="right-eye"></div>
+    <div id="left-eye"></div>
+    <div id="mouth">
+      <div id="left-mouth"></div>
+      <div id="right-mouth"></div>
+    </div>
+  </div>
+  <div id="stem-container">
+    <div id="stem"></div>
+  </div>
+  <div id="leftLeaf-container">
+    <div id="left-leaf"></div>
+  </div>
+  <div id="rightLeaf-container">
+    <div id="right-leaf"></div>
+  </div>
+  <div id="bud"></div>
+  <div class="petal" id="petal-container">
+    <div id="petal1"></div>
+    <div id="petal2"></div>
+    <div id="petal3"></div>
+    <div id="petal4"></div>
+    <div id="petal5"></div>
+    <div id="petal6"></div>
+    <div id="petal7"></div>
+    <div id="petal8"></div>
+    <div id="petal9"></div>
+    <div id="petal10"></div>
+    <div id="petal11"></div>
+    <div id="petal12"></div>
+    <div id="petal13"></div>
+    <div id="petal14"></div>
+    <div id="petal15"></div>
+    <div id="petal16"></div>
+  </div>
+</div>
+
+<script>
+  var btn =  document.getElementsByTagName("P");
+  var seed = document.getElementById("seed");
+  var stem = document.getElementById("stem");
+  var leftLeaf = document.getElementById("left-leaf");
+  var rightLeaf = document.getElementById("right-leaf");
+  var bud = document.getElementById("bud");
+  var petal = document.getElementById("petal-container");
+
+  seed.addEventListener("animationend", stemStartFunc);
+  stem.addEventListener("animationstart", leftLeafFunc);
+  stem.addEventListener("animationstart", rightLeafFunc);
+  stem.addEventListener("animationend", budFunc);
+  bud.addEventListener("animationend", petalFunc);
+
+  function btnFunc() {
+    seed.style.animationName = "seed";
+  }
+  function stemStartFunc() {
+    stem.style.animationName = "stem";
+  } 
+  function leftLeafFunc() {
+    leftLeaf.style.animationName = "leftLeaf";
+  } 
+  function rightLeafFunc() {
+    rightLeaf.style.animationName = "rightLeaf";
+  } 
+  function budFunc(){
+    bud.style.animationName = "bud";
+  }
+  function petalFunc(){
+    petal.style.animationName = "petal";
+  }
+</script>
+</body>
+</html>
